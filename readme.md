@@ -61,3 +61,13 @@ cd ~
 5. Снова добавили в staging area с помощью git add. Состояния: staged (+ tracked).
 6. Сделали коммит. Состояния: tracked.
 7. Повторили пункты 4−7 много-много раз.
+
+```mermaid
+graph LR;
+  untracked -- "git add" --> staged;
+  staged  -- "git commit" --> tracked;
+  tracked -- "Изменения" --> modified;
+  modified-- "git add" --> staged;
+  staged  -- "Изменения" --> modified;
+```
+
